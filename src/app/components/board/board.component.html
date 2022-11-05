@@ -1,0 +1,30 @@
+<div class="board">
+  <div class="row-dots">
+    <div class="rows" *ngFor="let row of rowsArray">
+      <ng-container [ngTemplateOutlet]="!(row % 2) ? evenRow : oddRow">
+        <!-- EVEN ROW -->
+        <ng-template #evenRow>
+          <div *ngFor="let col of colsArray">
+            <div *ngIf="!(col % 2); else horiz">
+              <dot></dot>
+            </div>
+            <ng-template #horiz>
+              <vert></vert>
+            </ng-template>
+          </div>
+        </ng-template>
+        <!-- ODD ROW -->
+        <ng-template #oddRow>
+          <div *ngFor="let col of colsArray">
+            <div *ngIf="col % 2; else line">
+              <square></square>
+            </div>
+            <ng-template #line>
+              <horiz></horiz>
+            </ng-template>
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+</div>

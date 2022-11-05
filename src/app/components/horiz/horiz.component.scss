@@ -1,0 +1,14 @@
+.line-horiz {
+  width: 64px;
+  height: 12px;
+  background-color: #EEE;
+  margin: 2px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #FF000055;
+  }
+}
+.color1 {
+  background-color: #FF0000BB;
+}
